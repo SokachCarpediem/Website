@@ -70,3 +70,8 @@ a{color:inherit}button,input{font:inherit}button{cursor:pointer}
 @media(max-width:1100px){.hero h1{font-size:clamp(68px,8.5vw,105px)}}
 @media(max-width:740px){.hero h1{font-size:clamp(65px,13vw,91px)}.experience-intro{align-items:start;flex-direction:column;gap:20px}.experience-intro>p{max-width:560px}.experience-list{margin-top:40px}.experience-entry{grid-template-columns:1fr;gap:19px;padding:28px 0 32px}.experience-index{justify-content:space-between}.experience-note{text-align:left}.experience-detail h3{font-size:clamp(31px,7.5vw,43px)}}
 @media(max-width:440px){.hero h1{font-size:clamp(53px,13vw,66px)}.experience-detail h3{font-size:clamp(28px,7.5vw,36px)}}
+
+/* Link from the homepage experience preview to the full editorial timeline. */
+.we-index-link{display:inline-flex;align-items:center;justify-content:space-between;gap:55px;margin-top:30px;padding:19px 23px;text-decoration:none;background:var(--ink);color:#fff;font-size:11px;letter-spacing:.1em;font-weight:900;transition:background .2s,transform .2s}
+.we-index-link:hover{background:#46503a;transform:translateY(-2px)}
+@media(max-width:440px){.we-index-link{width:100%;gap:15px;font-size:10px}}
