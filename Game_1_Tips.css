@@ -1,0 +1,213 @@
+/* English-only Blackjack guide: editorial composition, responsive across devices. */
+.rules-board {
+  border: 1px solid var(--ink, #242321);
+  background: #f1f0e9;
+  overflow: hidden;
+}
+
+.rules-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 52px;
+  padding: 15px 24px;
+  background: #dde7cb;
+  border-bottom: 1px solid var(--ink, #242321);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+
+.rules-layout {
+  display: grid;
+  grid-template-columns: minmax(275px, .9fr) minmax(0, 1.85fr);
+}
+
+.rules-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  padding: clamp(28px, 3.2vw, 50px);
+  background: #293329;
+  color: #f7f6f2;
+}
+
+.rules-overline, .rules-intro-foot {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .17em;
+  color: #d9e9c8;
+}
+
+.rules-intro h2 {
+  max-width: 340px;
+  margin: 30px 0 18px;
+  font-family: var(--serif, Georgia, serif);
+  font-size: clamp(41px, 4vw, 64px);
+  line-height: 1.06;
+  font-weight: 400;
+  letter-spacing: -.055em;
+}
+
+.rules-intro h2 em { color: #d8f39b; font-weight: 400; }
+
+.rules-intro > p:not(.rules-intro-foot) {
+  max-width: 290px;
+  margin: 0;
+  color: #d0d7cb;
+  line-height: 1.75;
+  font-size: 15px;
+}
+
+.rules-number {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-top: auto;
+  padding-top: 35px;
+  font-family: var(--serif, Georgia, serif);
+  font-size: clamp(108px, 13vw, 185px);
+  font-weight: 400;
+  line-height: .88;
+  letter-spacing: -.12em;
+  color: #d8f39b;
+}
+
+.rules-number span {
+  position: relative;
+  top: -2.2em;
+  font-family: var(--sans, Arial, sans-serif);
+  font-size: 20px;
+  letter-spacing: 0;
+  color: #ed7d59;
+}
+
+.rules-intro-foot {
+  margin: 28px 0 0;
+  padding-top: 19px;
+  width: 100%;
+  border-top: 1px solid #52614d;
+}
+
+.rules-steps {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.rule-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: clamp(27px, 3vw, 44px);
+  background: #f1f0e9;
+}
+
+.rule-card:nth-child(odd) { border-right: 1px solid #d2d4c8; }
+.rule-card:nth-child(-n + 2) { border-bottom: 1px solid #d2d4c8; }
+.rule-card:nth-child(2), .rule-card:nth-child(3) { background: #e9ebe1; }
+
+.rule-number {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  font-family: var(--serif, Georgia, serif);
+  font-size: 37px;
+  line-height: 1;
+  letter-spacing: -.05em;
+  color: #b15f45;
+}
+
+.rule-number span {
+  font-family: var(--sans, Arial, sans-serif);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .09em;
+  color: #8b8a80;
+}
+
+.rule-card h3 {
+  margin: 27px 0 13px;
+  font-family: var(--serif, Georgia, serif);
+  font-size: clamp(25px, 2.3vw, 34px);
+  line-height: 1.15;
+  font-weight: 400;
+  letter-spacing: -.035em;
+}
+
+.rule-card p {
+  max-width: 400px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #575b53;
+}
+
+.rule-card strong { color: #253427; font-weight: 800; }
+
+.rules-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 78px;
+  padding: 16px 24px;
+  background: var(--dark, #20251e);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .13em;
+}
+
+.rules-bottom a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  min-width: 150px;
+  padding: 15px 17px;
+  background: var(--lime, #d8f39b);
+  color: var(--ink, #242321);
+  text-decoration: none;
+  letter-spacing: .08em;
+  transition: background .2s ease, transform .2s ease;
+}
+
+.rules-bottom a:hover { background: #edfcb7; transform: translateY(-2px); }
+
+@media (max-width: 1020px) {
+  .rules-layout { grid-template-columns: 1fr; }
+  .rules-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 8px 24px;
+    align-items: center;
+  }
+  .rules-overline { grid-column: 1; }
+  .rules-intro h2 { grid-column: 1; margin: 6px 0; }
+  .rules-intro > p:not(.rules-intro-foot) { grid-column: 1; }
+  .rules-number { grid-column: 2; grid-row: 1 / 4; padding-top: 0; font-size: clamp(100px, 16vw, 145px); }
+  .rules-intro-foot { grid-column: 1 / -1; }
+}
+
+@media (max-width: 640px) {
+  .rules-top { padding: 15px 17px; font-size: 9px; letter-spacing: .09em; }
+  .rules-intro { padding: 29px 24px; grid-template-columns: 1fr; }
+  .rules-overline, .rules-intro h2, .rules-intro > p:not(.rules-intro-foot), .rules-intro-foot { grid-column: 1; }
+  .rules-intro h2 { font-size: clamp(43px, 10vw, 60px); }
+  .rules-number { grid-column: 1; grid-row: auto; padding-top: 18px; font-size: 111px; }
+  .rules-number span { top: -2em; }
+  .rules-intro-foot { margin-top: 10px; }
+  .rules-steps { grid-template-columns: 1fr; }
+  .rule-card { padding: 28px 24px 32px; }
+  .rule-card:nth-child(odd) { border-right: 0; }
+  .rule-card:not(:last-child) { border-bottom: 1px solid #d2d4c8; }
+  .rule-card h3 { margin-top: 16px; font-size: 30px; }
+  .rules-bottom { flex-direction: column; align-items: stretch; padding: 22px; }
+  .rules-bottom a { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rules-bottom a { transition: none; }
+}
