@@ -1,0 +1,43 @@
+/* Blackjack visual layer. IDs are retained for Game_1.js. */
+.blackjack-stage { background: #d8e2cb; overflow: hidden; }
+.blackjack-stage::before { content: ''; position: absolute; inset: 25px; border: 1px solid rgba(42,63,42,.15); border-radius: 50%; pointer-events: none; }
+.felt-decoration { position: absolute; font-family: var(--serif); font-weight: 800; font-size: 430px; line-height: 1; letter-spacing: -.09em; color: rgba(35,64,45,.045); top: 50%; left: 50%; transform: translate(-50%,-50%); pointer-events: none; }
+.table-content.container { position: relative; width: min(calc(100% - 90px),930px); margin: auto; padding: 38px 0 30px; }
+.hand-group { min-height: 190px; }
+.hand-heading { display: flex; align-items: baseline; flex-wrap: wrap; gap: 12px 18px; margin-bottom: 18px; }
+.hand-side { font-size: 10px; font-weight: 800; letter-spacing: .14em; color: #5d725a; min-width: 93px; }
+.hand-heading h2 { font-size: 25px; font-weight: 400; letter-spacing: -.04em; font-family: var(--serif); margin: 0; }
+.sum-pill { margin-left: auto; font-size: 9px; font-weight: 800; letter-spacing: .12em; border: 1px solid rgba(36,35,33,.3); background: rgba(247,246,242,.48); padding: 8px 12px; display: inline-flex; align-items: center; gap: 18px; }
+.sum-pill strong { font-family: var(--serif); font-size: 17px; letter-spacing: 0; min-width: 12px; }
+.sum-pill strong:empty::before { content: '—'; }
+.card-row { display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap; min-height: 126px; }
+#dealer-cards img, #your-cards img { width: 83px; height: 116px; max-width: 25vw; object-fit: fill; background: #fffefb; border: 1px solid rgba(25,34,23,.23); border-radius: 5px; box-shadow: 3px 5px 0 rgba(39,58,36,.11); }
+.table-divider { display: flex; align-items: center; gap: 22px; color: #506a53; font-size: 9px; font-weight: 800; letter-spacing: .17em; padding: 5px 0 17px; }
+.table-divider::before, .table-divider::after { content: ''; display: block; flex: 1; height: 1px; background: rgba(48,73,49,.27); }
+.table-actions { display: flex; justify-content: space-between; align-items: center; gap: 18px; padding-top: 21px; margin-top: 14px; border-top: 1px solid rgba(39,65,41,.25); }
+.result-message { font-family: var(--serif); font-size: 29px; line-height: 1.1; min-height: 34px; color: #223b29; }
+.result-message:empty::before { content: 'Your move.'; color: #55735b; }
+.button-container { display: flex; gap: 9px; flex-wrap: wrap; justify-content: flex-end; }
+.button-container button { border: 1px solid #253a2a; background: #f7f6f2; padding: 14px 17px; min-width: 90px; font-size: 11px; font-weight: 900; letter-spacing: .1em; transition: transform .2s, background .2s; }
+.button-container button:hover { transform: translateY(-2px); }
+.button-container #hit { background: #222e24; color: #fff; }
+.button-container #hit:hover { background: #3a553f; }
+.button-container #stay { background: var(--lime); }
+.button-container #stay:hover { background: #b9e47b; }
+.button-container #refresh { border-color: rgba(37,58,42,.55); background: transparent; }
+.button-container button span { padding-left: 10px; }
+@media (max-width: 680px) {
+  .table-content.container { width: calc(100% - 32px); padding: 28px 0 25px; }
+  .hand-group { min-height: 170px; }
+  .hand-heading h2 { font-size: 23px; }
+  .hand-side { min-width: auto; }
+  #dealer-cards img, #your-cards img { width: 68px; height: 95px; }
+  .card-row { gap: 5px; min-height: 105px; }
+  .table-actions { align-items: flex-start; flex-direction: column; }
+  .button-container { justify-content: flex-start; width: 100%; }
+  .button-container button { flex: 1; min-width: 74px; padding: 13px 8px; }
+  .button-container button span { padding-left: 3px; }
+  .result-message { font-size: 25px; }
+  .table-divider { font-size: 8px; gap: 10px; }
+  .blackjack-stage::before { inset: 10px; }
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f6f2">
+  <meta name="description" content="Play Rock, Paper, Scissors against the computer in Hanzhang Shan*'s playground.">
+  <title>Rock, Paper, Scissors — Hanzhang Shan*</title>
+  <link rel="stylesheet" href="./games.css">
+  <link rel="stylesheet" href="./Game_2.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to game</a>
+  <header class="game-header"><div class="page-wrap game-header-inner">
+    <a class="game-brand" href="./index.html" aria-label="Hanzhang Shan* — Homepage"><span class="game-brand-mark">HS<span>*</span></span><span class="game-brand-name">HANZHANG<br>SHAN*</span></a>
+    <nav class="game-nav" aria-label="Site navigation"><a href="./Game_Main.html">ALL GAMES ↗</a><a class="outline-nav" href="./index.html">PORTFOLIO ↗</a></nav>
+  </div></header>
+  <main id="main" class="page-wrap game-main">
+    <div class="game-topline"><span>THE PLAYGROUND / GAME 02</span><span>QUICK THINKING · PURE CHANCE</span></div>
+    <div class="game-hero"><div><p class="game-kicker">READY, SET, SHOOT</p><h1 class="game-title">Rock, paper,<br><em>scissors</em><span class="accent">.</span></h1></div><p class="game-description">Three signs. One little rivalry. Pick your move and leave the rest to chance.</p></div>
+    <div class="game-shell">
+      <div class="game-shell-meta"><span>02 / THE HEAD-TO-HEAD</span><span class="meta-right">BEST OF ONE · PLAY AGAIN</span></div>
+      <div class="game-stage rps-stage">
+        <!-- The original script requires .container, .your_result img, .dealer_result img, .result and three .option_image nodes. -->
+        <div class="container rps-game">
+          <div class="round-heading"><span>YOU</span><span>VS.</span><span>COMPUTER</span></div>
+          <div class="result_filed">
+            <div class="result_images"><span class="your_result"><img src="./rock.png" alt="Your choice"></span><span class="versus-decoration" aria-hidden="true">✳</span><span class="dealer_result"><img src="./rock.png" alt="Computer choice"></span></div>
+            <div class="result" role="status" aria-live="polite">Let's Play!!!</div>
+          </div>
+          <div class="selection-header"><span>CHOOSE YOUR MOVE</span><span>01 / 02 / 03</span></div>
+          <div class="option_images" aria-label="Choose rock, paper, or scissors">
+            <span class="option_image"><img src="./rock.png" alt=""><p>ROCK</p><span class="option-index">01 ↗</span></span>
+            <span class="option_image"><img src="./paper.png" alt=""><p>PAPER</p><span class="option-index">02 ↗</span></span>
+            <span class="option_image"><img src="./scissors.png" alt=""><p>SCISSORS</p><span class="option-index">03 ↗</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="game-bottom"><p>NO TRICKS. JUST THREE CHOICES.</p><div class="game-bottom-links"><a href="./Game_Main.html">BACK TO ALL GAMES ↗</a></div></div>
+  </main>
+  <footer class="page-wrap game-footer"><span>© HANZHANG SHAN*</span><span>MADE TO PLAY <span class="footer-star" aria-hidden="true">✳</span></span><span>02 / 03</span></footer>
+  <script src="./Game_2.js" defer></script>
+</body>
+</html>

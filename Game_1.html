@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f6f2">
+  <meta name="description" content="Play Blackjack in Hanzhang Shan*'s creative playground.">
+  <title>Blackjack — Hanzhang Shan*</title>
+  <link rel="stylesheet" href="./games.css">
+  <link rel="stylesheet" href="./Game_1.css">
+  <script src="./Game_1.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to game</a>
+  <header class="game-header">
+    <div class="page-wrap game-header-inner">
+      <a class="game-brand" href="./index.html" aria-label="Hanzhang Shan* — Homepage">
+        <span class="game-brand-mark">HS<span>*</span></span><span class="game-brand-name">HANZHANG<br>SHAN*</span>
+      </a>
+      <nav class="game-nav" aria-label="Site navigation">
+        <a href="./Game_Main.html">ALL GAMES ↗</a>
+        <a class="outline-nav" href="./index.html">PORTFOLIO ↗</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="page-wrap game-main">
+    <div class="game-topline"><span>THE PLAYGROUND / GAME 01</span><span>CARDS · STRATEGY · CHANCE</span></div>
+    <div class="game-hero">
+      <div><p class="game-kicker">TAKE YOUR CHANCES</p><h1 class="game-title">Black<em>jack</em><span class="accent">.</span></h1></div>
+      <p class="game-description">The classic race to 21. Draw a card, hold your hand, and see if you can beat the dealer.</p>
+    </div>
+    <div class="game-shell">
+      <div class="game-shell-meta"><span>01 / THE CARD TABLE</span><span class="meta-right">YOU VS. THE DEALER</span></div>
+      <div class="game-stage blackjack-stage">
+        <div class="felt-decoration" aria-hidden="true">21</div>
+        <div class="table-content container">
+          <div class="hand-group dealer-hand">
+            <div class="hand-heading"><span class="hand-side">01 / DEALER</span><h2>Dealer's hand</h2><span class="sum-pill">TOTAL <strong id="dealer-sum" aria-label="Dealer total"></strong></span></div>
+            <div id="dealer-cards" class="card-row" aria-label="Dealer's cards"><img id="hidden" src="./cards/BACK.png" alt="Dealer's face-down card"></div>
+          </div>
+          <div class="table-divider"><span>HIT 21 TO WIN · DON'T GO OVER</span></div>
+          <div class="hand-group your-hand">
+            <div class="hand-heading"><span class="hand-side">02 / PLAYER</span><h2>Your hand</h2><span class="sum-pill">TOTAL <strong id="your-sum" aria-label="Your total"></strong></span></div>
+            <div id="your-cards" class="card-row" aria-label="Your cards"></div>
+          </div>
+          <div class="table-actions">
+            <div id="results" class="result-message" role="status" aria-live="polite"></div>
+            <div class="button-container"><button id="hit" type="button">HIT <span aria-hidden="true">＋</span></button><button id="stay" type="button">STAY <span aria-hidden="true">→</span></button><button id="refresh" type="button" onclick="window.location.reload();">RESTART ↻</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="game-bottom"><p>THE HOUSE DEALS. YOU DECIDE.</p><div class="game-bottom-links"><a href="./Game_1_Tips.html">GAME RULES ↗</a><a href="./Game_Main.html">BACK TO ALL GAMES ↗</a></div></div>
+  </main>
+  <footer class="page-wrap game-footer"><span>© HANZHANG SHAN*</span><span>MADE TO PLAY <span class="footer-star" aria-hidden="true">✳</span></span><span>01 / 03</span></footer>
+</body>
+</html>

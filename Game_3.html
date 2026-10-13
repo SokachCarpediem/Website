@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f6f2">
+  <meta name="description" content="Play Tic-Tac-Toe against a computer opponent in Hanzhang Shan*'s playground.">
+  <title>Tic-Tac-Toe — Hanzhang Shan*</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="./games.css">
+  <link rel="stylesheet" href="./Game_3.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to game</a>
+  <header class="game-header"><div class="page-wrap game-header-inner">
+    <a class="game-brand" href="./index.html" aria-label="Hanzhang Shan* — Homepage"><span class="game-brand-mark">HS<span>*</span></span><span class="game-brand-name">HANZHANG<br>SHAN*</span></a>
+    <nav class="game-nav" aria-label="Site navigation"><a href="./Game_Main.html">ALL GAMES ↗</a><a class="outline-nav" href="./index.html">PORTFOLIO ↗</a></nav>
+  </div></header>
+  <main id="main" class="page-wrap game-main">
+    <div class="game-topline"><span>THE PLAYGROUND / GAME 03</span><span>TACTICS · TWO PLAYERS · NINE SQUARES</span></div>
+    <div class="game-hero"><div><p class="game-kicker">THINK ONE MOVE AHEAD</p><h1 class="game-title">Tic-tac-<em>toe</em><span class="accent">.</span></h1></div><p class="game-description">Three in a row takes the round. Choose your side, face the computer, and plan your next move.</p></div>
+    <div class="game-shell">
+      <div class="game-shell-meta"><span>03 / THE GRID</span><span class="meta-right">X VS. O · FIRST TO THREE</span></div>
+      <div class="game-stage tic-stage">
+        <div class="tic-art tic-art-x" aria-hidden="true">×</div><div class="tic-art tic-art-o" aria-hidden="true">○</div>
+        <div class="tic-play-space">
+          <!-- Class names and exactly nine 'section span' cells are required by the original Game_3.js. -->
+          <div class="select-box">
+            <span class="panel-kicker">NEW GAME / CHOOSE YOUR SIDE</span>
+            <header>Make your <em>move.</em></header>
+            <div class="content"><div class="title">Which symbol would you like to play?</div><div class="options"><button class="playerX" type="button">PLAY AS X <span aria-hidden="true">×</span></button><button class="playerO" type="button">PLAY AS O <span aria-hidden="true">○</span></button></div></div>
+            <p class="panel-note">YOUR OPPONENT IS THE COMPUTER.</p>
+          </div>
+          <div class="play-board">
+            <div class="board-label"><span>THE BOARD</span><span>THINK THREE MOVES AHEAD ↗</span></div>
+            <div class="details"><div class="players"><span class="Xturn">X's Turn</span><span class="Oturn">O's Turn</span><div class="slider"></div></div></div>
+            <div class="play-area" aria-label="Tic Tac Toe board">
+              <section><span class="box1"></span><span class="box2"></span><span class="box3"></span></section>
+              <section><span class="box4"></span><span class="box5"></span><span class="box6"></span></section>
+              <section><span class="box7"></span><span class="box8"></span><span class="box9"></span></section>
+            </div>
+            <p class="board-hint">GET THREE IN A ROW TO WIN.</p>
+          </div>
+          <div class="result-box"><span class="panel-kicker">ROUND FINISHED / THE RESULT</span><div class="won-text" role="status" aria-live="polite"></div><div class="btn"><button type="button">PLAY AGAIN ↻</button></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="game-bottom"><p>NINE SQUARES. ENDLESS POSSIBILITIES.</p><div class="game-bottom-links"><a href="./Game_Main.html">BACK TO ALL GAMES ↗</a></div></div>
+  </main>
+  <footer class="page-wrap game-footer"><span>© HANZHANG SHAN*</span><span>MADE TO PLAY <span class="footer-star" aria-hidden="true">✳</span></span><span>03 / 03</span></footer>
+  <script src="./Game_3.js"></script>
+</body>
+</html>

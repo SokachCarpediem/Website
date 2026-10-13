@@ -1,0 +1,51 @@
+/* Tic-Tac-Toe visual layer. JS toggles .hide/.show/.active, and sets cell markup. */
+.tic-stage { background: #e0e1ef; overflow: hidden; }
+.tic-stage::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(64,66,95,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(64,66,95,.07) 1px,transparent 1px); background-size: 64px 64px; mask-image: linear-gradient(to right,transparent,black,transparent); pointer-events: none; }
+.tic-art { position: absolute; font-family: var(--serif); line-height: .7; color: rgba(130,83,98,.23); pointer-events: none; }
+.tic-art-x { font-size: 260px; left: 4%; top: 3%; color: #d98977; transform: rotate(-15deg); }
+.tic-art-o { font-size: 290px; bottom: 5%; right: 3%; color: #a9a8ca; transform: rotate(16deg); }
+.tic-play-space { position: relative; min-height: 570px; display: grid; place-items: center; padding: 30px; }
+.select-box, .play-board, .result-box { grid-area: 1 / 1; width: min(100%,440px); transition: opacity .3s, transform .3s, visibility .3s; }
+.select-box { position: relative; z-index: 2; background: #f8f7f3; padding: 35px; border: 1px solid #272a37; box-shadow: 12px 12px 0 rgba(77,76,106,.15); }
+.select-box.hide { opacity: 0; visibility: hidden; pointer-events: none; transform: scale(.94); }
+.panel-kicker { font-size: 10px; font-weight: 800; letter-spacing: .16em; color: #a15e4d; }
+.select-box header { font-family: var(--serif); font-size: 53px; line-height: 1.02; letter-spacing: -.06em; margin: 22px 0 16px; }
+.select-box header em { font-weight: 400; }
+.select-box .title { font-size: 14px; color: #66636a; line-height: 1.65; margin-bottom: 25px; }
+.select-box .options { display: flex; gap: 11px; }
+.options button { padding: 16px 15px; flex: 1; border: 1px solid #282733; background: #f6f4ef; font-size: 11px; font-weight: 800; display: flex; justify-content: space-between; align-items: center; gap: 5px; transition: transform .2s,background .2s; }
+.options button span { font-size: 25px; font-family: var(--serif); font-weight: 400; line-height: .7; }
+.options button.playerX { background: var(--lime); }
+.options button:hover { transform: translateY(-3px); }
+.panel-note { margin: 27px 0 0; border-top: 1px solid var(--line); padding-top: 19px; font-size: 9px; letter-spacing: .12em; font-weight: 800; color: #8d8882; }
+.play-board { position: relative; z-index: 1; opacity: 0; visibility: hidden; pointer-events: none; transform: scale(.94); width: min(100%,402px); }
+.play-board.show { opacity: 1; visibility: visible; pointer-events: auto; transform: scale(1); }
+.board-label { display: flex; justify-content: space-between; gap: 12px; font-size: 9px; font-weight: 800; letter-spacing: .11em; padding-bottom: 15px; }
+.play-board .details { background: #f5f2ee; padding: 5px; border: 1px solid #302c38; }
+.play-board .players { position: relative; width: 100%; display: flex; }
+.play-board .details span { flex: 1; display: grid; place-items: center; height: 40px; position: relative; z-index: 1; font-size: 12px; font-weight: 800; letter-spacing: .09em; transition: color .3s; }
+.details span:first-child { color: var(--ink); }
+.details .slider { position: absolute; left: 0; top: 0; background: var(--lime); width: 50%; height: 100%; transition: left .3s; border: 1px solid #2c3932; }
+.players.active .slider { left: 50%; }
+.play-board .play-area { margin-top: 15px; }
+.play-board section { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 7px; margin-bottom: 7px; }
+.play-board section span { display: grid; place-items: center; aspect-ratio: 1; width: 100%; background: #f8f7f2; border: 1px solid #323041; box-shadow: 3px 3px 0 rgba(46,43,68,.08); font-size: 47px; color: #bc5941; cursor: pointer; line-height: 1; transition: background .2s; }
+.play-board section span:hover { background: #e6f3c9; }
+.play-board section span i.fa-circle { color: #4f6b83; }
+.board-hint { text-align: center; font-size: 9px; font-weight: 800; letter-spacing: .13em; margin: 21px 0 0; }
+.result-box { position: relative; z-index: 3; background: #f8f7f3; border: 1px solid var(--ink); padding: 44px 34px; text-align: center; opacity: 0; visibility: hidden; pointer-events: none; transform: scale(.94); box-shadow: 12px 12px 0 rgba(77,76,106,.15); }
+.result-box.show { opacity: 1; visibility: visible; pointer-events: auto; transform: scale(1); }
+.result-box .won-text { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 7px; font-family: var(--serif); font-size: 32px; line-height: 1.12; letter-spacing: -.045em; margin: 25px 0; min-height: 72px; }
+.result-box .won-text p { color: #bd604a; margin: 0; font-style: italic; }
+.result-box .btn button { background: var(--lime); border: 1px solid var(--ink); padding: 15px 25px; font-size: 11px; font-weight: 900; letter-spacing: .11em; }
+.result-box .btn button:hover { background: #bce87d; }
+@media(max-width:650px) {
+  .tic-play-space { min-height: 520px; padding: 20px; }
+  .select-box { padding: 27px 20px; }
+  .select-box header { font-size: 46px; }
+  .play-board { width: min(100%,330px); }
+  .play-board section { gap: 6px; margin-bottom: 6px; }
+  .play-board section span { font-size: 41px; }
+  .tic-art-x { font-size: 170px; }
+  .tic-art-o { font-size: 190px; }
+}

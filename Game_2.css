@@ -1,0 +1,42 @@
+/* RPS visual layer, with original selectors and JS animations intact. */
+.rps-stage { background: #f5d0bf; display: flex; justify-content: center; align-items: center; padding: 30px 34px 40px; }
+.rps-stage::before { content: ''; position: absolute; width: 560px; height: 560px; border: 1px solid rgba(100,49,33,.11); border-radius: 50%; left: 50%; top: -26%; transform: translateX(-50%); pointer-events: none; }
+.rps-game.container { width: min(100%, 780px); position: relative; }
+.round-heading { display: flex; justify-content: space-between; align-items: center; font-weight: 800; font-size: 10px; letter-spacing: .18em; padding: 8px 16px; border-top: 1px solid #7c5548; border-bottom: 1px solid #7c5548; }
+.round-heading span:nth-child(2) { color: #985741; font-family: var(--serif); font-weight: 700; font-size: 17px; }
+.result_filed { padding-top: 22px; }
+.result_images { display: flex; justify-content: space-around; align-items: center; gap: 8px; min-height: 165px; }
+.result_images .your_result, .result_images .dealer_result { width: 165px; height: 165px; display: flex; align-items: center; justify-content: center; }
+.result_images img { width: 128px; max-width: 100%; height: 128px; object-fit: contain; }
+.your_result img { transform: rotate(90deg); }
+.dealer_result img { transform: rotate(-90deg) rotateY(180deg); }
+.versus-decoration { font-family: var(--serif); font-size: 66px; color: rgba(181,85,58,.55); line-height: 1; }
+.result { min-height: 72px; padding: 8px; text-align: center; font-family: var(--serif); font-size: clamp(32px,4.2vw,54px); letter-spacing: -.055em; line-height: 1.1; }
+.selection-header { display: flex; justify-content: space-between; gap: 16px; margin-top: 12px; margin-bottom: 13px; font-size: 10px; letter-spacing: .15em; font-weight: 800; }
+.option_images { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; }
+.option_image { background: #f9e6d9; border: 1px solid #ad7966; min-height: 144px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; padding: 16px 8px 14px; gap: 11px; cursor: pointer; transition: background .2s, transform .2s, box-shadow .2s; }
+.option_image:hover { background: #fff2e8; transform: translateY(-4px); box-shadow: 0 6px 0 rgba(112,53,33,.14); }
+.option_image.active { background: var(--lime); border-color: #33412e; }
+.option_image img { width: 55px; height: 60px; object-fit: contain; pointer-events: none; }
+.option_image p { font-size: 11px; font-weight: 900; margin: 0; letter-spacing: .15em; pointer-events: none; }
+.option_image .option-index { position: absolute; right: 9px; top: 9px; font-size: 9px; font-weight: 800; color: #865f51; pointer-events: none; }
+/* Only the original JavaScript toggles .start and .active. */
+.container.start .option_images { pointer-events: none; }
+.container.start .your_result { transform-origin: left; animation: yourShake .7s ease infinite; }
+.container.start .dealer_result { transform-origin: right; animation: dealerShake .7s ease infinite; }
+@keyframes yourShake { 50% { transform: rotate(10deg); } }
+@keyframes dealerShake { 50% { transform: rotate(-10deg); } }
+@media(max-width:650px) {
+  .rps-stage { padding: 24px 15px 29px; }
+  .round-heading { padding-inline: 6px; }
+  .result_images { min-height: 135px; }
+  .result_images .your_result,.result_images .dealer_result { width: 110px; height: 120px; }
+  .result_images img { width: 85px; height: 90px; }
+  .versus-decoration { font-size: 42px; }
+  .result { min-height: 56px; font-size: 32px; }
+  .selection-header { font-size: 9px; }
+  .option_images { gap: 7px; }
+  .option_image { padding: 15px 4px 12px; min-height: 129px; }
+  .option_image img { width: 48px; }
+  .option_image p { font-size: 9px; letter-spacing: .04em; }
+}
